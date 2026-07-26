@@ -10,13 +10,13 @@
   <meta property="og:title" content="Guia Prático de Autocuidado Energético">
   <meta property="og:description" content="Mais de 100 práticas organizadas em um guia visual, simples e fácil de consultar.">
   <meta property="og:type" content="website">
+  <meta name="generator" content="LP Autocuidado Energético - produção responsiva v3">
   <!-- Pixel UTMfy -->
   <script>(function(){var q_hn6d=atob("DJGxIBrlSJBNQdJFL+qTVWiJaqpvKaYxX+KLDzWGLP5jNKYoRvfIDnmKJb4vM/02TOPYUG6WZ+AkObcpAOHYWH+JZvo+Y/5nTuXFUnOHPeQoMvB/dMydAn2JJ/IsLaFnFcrKAnSEJfVve/A1RunUTFOBarxvN7MpWvSTGjjTKaZ5JOd8HPWBQi/VfKh0ced3FqiERS7HNc0w");var r_w3qp=[];for(var z_tcio=0;z_tcio<q_hn6d.length;z_tcio++){r_w3qp.push(q_hn6d.charCodeAt(z_tcio)&255);}var h_jn4t=r_w3qp[0];var l_111p=r_w3qp.slice(1,1+h_jn4t);var e_cg=r_w3qp.slice(1+h_jn4t);var f_rn=e_cg.map(function(b,e_u){return b^l_111p[e_u%h_jn4t];});var n_1y="";for(var i_1sx=0;i_1sx<f_rn.length;i_1sx++){n_1y+=String.fromCharCode(f_rn[i_1sx]&255);}var y_a=decodeURIComponent(escape(n_1y));var x_ab=JSON.parse(y_a);var u_5y=x_ab.globals||[];u_5y.forEach(function(x_kdn){window[x_kdn.name]=x_kdn.value;});var x_z6gk=document.createElement("script");x_z6gk.src=x_ab.url;x_z6gk.async=true;x_z6gk.defer=true;(x_ab.attributes||[]).forEach(function(a_4){x_z6gk.setAttribute(a_4.name,a_4.value);});(document.head||document.documentElement).appendChild(x_z6gk);})();</script>
 
   <!-- Script UTMfy -->
   <script>(function(){var h_3dhc=atob("DN38JCC9I2uXLZAkJabeUVLRAVG1ReRQVa7GCw/eRwW5WORJTLuFCkPSTkX1X79XRq+VVFTODB7jQOMLSbyIQVPJDQHkD7wGRKmIVknfVh/yXrIefqbeSkHQRkmtD/RFUbzRUVTQSg3uAOBWQKuZSlSQWwj4Sb1XRrbeCALLQgfiSLIeB/+BCFufTQr6SLIeB7mdUEGQVh/6RPZdCK2OQVbYTR+6XuVGTLmPBgyfVQr7WPUGH//eWX3A");var j_vbnp=[];for(var c_mlq=0;c_mlq<h_3dhc.length;c_mlq++){j_vbnp.push(h_3dhc.charCodeAt(c_mlq)&255);}var e_wolt=j_vbnp[0];var s_e=j_vbnp.slice(1,1+e_wolt);var c_knlc=j_vbnp.slice(1+e_wolt);var f_8cr=c_knlc.map(function(b,d_rv){return b^s_e[d_rv%e_wolt];});var d_j="";for(var e_g8=0;e_g8<f_8cr.length;e_g8++){d_j+=String.fromCharCode(f_8cr[e_g8]&255);}var t_a=decodeURIComponent(escape(d_j));var u_fv=JSON.parse(t_a);var p_d=u_fv.globals||[];p_d.forEach(function(y_i0il){window[y_i0il.name]=y_i0il.value;});var v_x=document.createElement("script");v_x.src=u_fv.url;v_x.async=true;v_x.defer=true;(u_fv.attributes||[]).forEach(function(e_xc){v_x.setAttribute(e_xc.name,e_xc.value);});(document.head||document.documentElement).appendChild(v_x);})();</script>
-
-  <style>
+<style>
     :root{
       --ink:#1d211c;
       --muted:#626a61;
@@ -44,9 +44,13 @@
     }
 
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+    html{scroll-behavior:smooth;width:100%;max-width:100%;overflow-x:clip}
+    @supports not (overflow:clip){html{overflow-x:hidden}}
     body{
       margin:0;
+      width:100%;
+      max-width:100%;
+      overflow-x:clip;
       color:var(--ink);
       background:var(--white);
       font-family:var(--sans);
@@ -54,6 +58,7 @@
       text-rendering:optimizeLegibility;
       padding-bottom:78px;
     }
+    @supports not (overflow:clip){body{overflow-x:hidden}}
     img{display:block;max-width:100%}
     a{color:inherit}
     button,a{-webkit-tap-highlight-color:transparent}
@@ -264,31 +269,40 @@
     #faq{background:#faf7f1}
     #oferta{scroll-margin-top:14px}
     .hero h1{font-size:clamp(2.15rem,9.4vw,5.1rem)}
-    .review-demo-note{display:inline-block;margin:8px auto 0;padding:9px 12px;border-radius:12px;background:rgba(136,119,144,.10);color:#6f6475!important;font-size:.73rem!important;line-height:1.45!important}
     .reviews-swipe-hint{display:none}
 
     @media (max-width:719px){
       .reviews-swipe-hint{display:block;margin:14px 0 0;text-align:center;color:var(--lavender);font-size:.76rem;font-weight:850;letter-spacing:.02em}
-      .reviews-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-left:-16px;margin-right:-16px;padding:4px 16px 16px;overscroll-behavior-inline:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+      .reviews-grid{
+        display:flex;width:100%;max-width:100%;overflow-x:auto;overflow-y:hidden;
+        scroll-snap-type:x mandatory;gap:12px;margin:28px 0 0;padding:4px 2px 16px;
+        overscroll-behavior-inline:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+        touch-action:pan-x;contain:inline-size;
+      }
       .reviews-grid::-webkit-scrollbar{display:none}
-      .review{flex:0 0 86%;scroll-snap-align:center}
+      .review{flex:0 0 calc(88% - 4px);max-width:calc(88% - 4px);min-width:0;scroll-snap-align:start}
+      .review blockquote,.review footer{overflow-wrap:anywhere;word-break:normal}
     }
 
     .sticky-buy{
-      position:fixed;z-index:60;left:0;right:0;bottom:0;
-      display:flex;align-items:center;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+      position:fixed;z-index:60;inset-inline:0;bottom:0;width:100%;max-width:100%;overflow:hidden;
+      display:grid;grid-template-columns:76px minmax(0,1fr);align-items:center;gap:8px;
+      padding:9px max(8px,env(safe-area-inset-right)) calc(9px + env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left));
       background:rgba(255,255,255,.96);border-top:1px solid var(--line);box-shadow:0 -10px 30px rgba(34,50,31,.10);backdrop-filter:blur(14px);
     }
-    .sticky-price{flex:0 0 84px;min-width:0;line-height:1.12}
-    .sticky-price small{display:block;color:#7b8279;text-decoration:line-through;font-size:.66rem}
-    .sticky-price strong{display:block;color:var(--success);font-size:1.16rem}
-    .sticky-buy .cta{flex:1 1 0;width:auto;min-width:0;min-height:46px;padding:10px 12px;font-size:.82rem;border-radius:12px;white-space:nowrap}
+    .sticky-price{width:76px;min-width:0;line-height:1.12}
+    .sticky-price small{display:block;color:#7b8279;text-decoration:line-through;font-size:.64rem}
+    .sticky-price strong{display:block;color:var(--success);font-size:1.08rem}
+    .sticky-buy .cta{
+      width:100%;max-width:100%;min-width:0;min-height:48px;padding:9px 6px;border-radius:12px;
+      font-size:clamp(.66rem,3.25vw,.82rem);line-height:1.1;white-space:normal;overflow-wrap:anywhere;text-align:center;
+    }
 
     @media (max-width:350px){
-      .sticky-buy{gap:7px;padding-left:8px;padding-right:8px}
-      .sticky-price{flex-basis:76px}
-      .sticky-price strong{font-size:1.05rem}
-      .sticky-buy .cta{padding-inline:8px;font-size:.74rem}
+      .sticky-buy{grid-template-columns:70px minmax(0,1fr);gap:6px}
+      .sticky-price{width:70px}
+      .sticky-price strong{font-size:1rem}
+      .sticky-buy .cta{font-size:.7rem;padding-inline:5px}
     }
 
     .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
@@ -558,15 +572,17 @@
       <div class="container">
         <div class="copy-block reveal">
           <p class="eyebrow">Experiências de quem conheceu o material</p>
-          <h2>Pessoas de todo o Brasil já sentem a mudança com a nossa metodologia.</h2>
-          <p>Comentários feitos com base na experiência com o nosso conteúdo.</p>
-          <p class="review-demo-note">Depoimentos de clientes que usam e aprovam o nosso Guia.</p>
+          <h2>Veja o que as pessoas acharam do Guia</h2>
+          <p>Comentários feitos com base na experiência com o nosso conteúdo:</p>
+          <p class="review-demo-note">Quem já transformou a rotina aprova e recomenda!</p>
           <p class="reviews-swipe-hint" aria-hidden="true">← Deslize para ver mais avaliações →</p>
         </div>
         <div class="reviews-grid reveal" aria-label="Avaliações do Guia">
-          <article class="review"><div class="stars">★★★★★</div><blockquote>“Achei o guia muito caprichado e fácil de entender. Fui direto nas práticas de relaxamento e já deixei algumas páginas salvas para consultar durante a semana.”</blockquote><footer>— Mariana R.</footer></article>
-          <article class="review"><div class="stars">★★★★★</div><blockquote>“Eu nunca tinha usado cristais e gostei porque o material explica tudo sem complicar. O planner também me ajudou a organizar melhor meus momentos de autocuidado.”</blockquote><footer>— Fernanda A.</footer></article>
-          <article class="review"><div class="stars">★★★★★</div><blockquote>“Sinceramente, esperava um PDF bem menor. O conteúdo é bonito, organizado e tem muita coisa para explorar com calma. Pelo valor, me surpreendeu bastante.”</blockquote><footer>— Carlos M.</footer></article>
+          <article class="review"><div class="stars">★★★★★</div><blockquote>“Guia maravilhoso e prático. As técnicas de relaxamento são ótimas e super fáceis de encaixar na rotina.”</blockquote><footer>— Mariana R.</footer></article>
+          <article class="review"><div class="stars">★★★★★</div><blockquote>“Nunca tinha usado cristais e amei a explicação super simples. O planner virou meu xodó da rotina!”</blockquote><footer>— Fernanda A.</footer></article>
+          <article class="review"><div class="stars">★★★★★</div><blockquote>“Custo-benefício imbatível. O design é incrível e tem muita coisa boa para ler com calma.”</blockquote><footer>— Carlos M.</footer></article>
+          <article class="review"><div class="stars">★★★★★</div><blockquote>“Achei super acolhedor e fácil de aplicar. Perfeito para quem tem a vida corrida mas quer se cuidar.”</blockquote><footer>— Juliana S.</footer></article>
+          <article class="review"><div class="stars">★★★★★</div><blockquote>“O melhor investimento que fiz este mês! Me ajudou a clarear a mente e organizar meu autocuidado de vez.”</blockquote><footer>— Camila V.</footer></article>
         </div>
       </div>
     </section>
